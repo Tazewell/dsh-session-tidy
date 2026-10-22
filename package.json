@@ -1,0 +1,58 @@
+{
+  "name": "dsh-session-tidy",
+  "version": "1.0.0",
+  "type": "module",
+  "license": "MIT",
+  "author": "Tazewell",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tazewell/dsh-session-tidy.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Tazewell/dsh-session-tidy/issues"
+  },
+  "homepage": "https://github.com/Tazewell/dsh-session-tidy#readme",
+  "description": "Delete DSH sessions into a recoverable trash instead of only archiving them, and edit an already-sent request by branching.",
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "session",
+    "trash",
+    "delete",
+    "fork",
+    "edit"
+  ],
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "lib/trash.js",
+    "lib/routes.js",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "icon.svg"
+  ],
+  "scripts": {
+    "test": "node --test \"test/*.test.mjs\""
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-workspace",
+        "@deepseek-ai/dsh-client-ui-sidebar",
+        "@deepseek-ai/dsh-client-ui-conversation"
+      ]
+    }
+  }
+}

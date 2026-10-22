@@ -1,0 +1,3 @@
+- insert:
+    - id: session-tidy
+      name: dsh-session-tidy
